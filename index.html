@@ -42,7 +42,6 @@
 
 		#featureCube {
 			display: flex;
-			padding: 20px;
 			align-items: center;
 			justify-content: center;
 			width: 100%;
@@ -199,12 +198,12 @@
 		<div class="cubeContainer container-fluid justify-content-center align-content-center">
 			<center>
 				<link rel="stylesheet" type="text/css" href="style_sheets/cube.css">
-				<input type="radio" checked id="rFront" name="select-face" />
-				<input type="radio" id="rLeft" name="select-face" />
-				<input type="radio" id="rRight" name="select-face" />
-				<input type="radio" id="rTop" name="select-face" />
-				<input type="radio" id="rBottom" name="select-face" />
-				<input type="radio" id="rBack" name="select-face" />
+				<input type="radio" checked id="rFront" name="select-face" hidden />
+				<input type="radio" id="rLeft" name="select-face" hidden />
+				<input type="radio" id="rRight" name="select-face" hidden />
+				<input type="radio" id="rTop" name="select-face" hidden />
+				<input type="radio" id="rBottom" name="select-face" hidden />
+				<input type="radio" id="rBack" name="select-face" hidden />
 				<script>
 					var cubeFaces = ["rFront", "rLeft", "rRight", "rTop", "rBottom", "rBack"];
 					var index = 0;
@@ -217,7 +216,7 @@
 					}, 2000);
 				</script>
 				<div class="wrap container-fluid">
-					<div class="cube  container-fluid">
+					<div class="cube container-fluid">
 						<div class="front container-fluid">
 							Buy, sell & Rent in the same platform
 						</div>
