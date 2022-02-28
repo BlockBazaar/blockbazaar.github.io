@@ -55,7 +55,7 @@
 				Welcome to Block Bazaar
             </div>
             <p style="font-size: 24px; padding: 30px;">Enjoy shopping!</p>
-			<a class="btn btn-primary me-md-2" target="_self" href="index.html" role="button" style="width: fit-content;">Get Started</a>
+			<a class="btn btn-primary me-md-2" target="_self" href="index.php" role="button" style="width: fit-content;">Get Started</a>
 		</div>
 	</div>
 </body>
