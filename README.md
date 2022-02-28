@@ -1,9 +1,4 @@
 # BLOCK BAZAAR
- 
-# Background:
-Nowadays, we can buy and sell things online very quickly in a secured way. Thanks to the online e-commerce companies like Amazon, Flipkart, Quikr and so on. And we can also book services online, such as Uber’s cab services.
-Buying and selling physical assets involving a huge amount of money, such as buying a car, flat, and so on, require a lot of middlemen and legal procedures. We can get to know about these online, such as we can see available properties in Magicbricks or 99acres, but we cannot buy them directly.
-Thus if online payments gave us e-commerce, then the ability to create and perform agreements online gives us the ability to create digital equivalents to wages, complex property transactions, many financial instruments, and other complex chains of value, obligations, and rights.
 
 # Objective:
 We aim to build a secure decentralised e-marketplace which also ensures legal protection to the buyer and the seller.
