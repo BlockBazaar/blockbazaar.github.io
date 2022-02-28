@@ -59,16 +59,4 @@
 		</div>
 	</div>
 </body>
-<?php
-if($_POST["submit"]) {
-    $recipient="project.bb2022@gmail.com"; 
-    $subject="BlockBazaar Query";
-    $sender=$_POST["userName"];
-    $senderEmail=$_POST["userMail"];
-    $message=$_POST["userMessage"];
-    $mailBody="Name: $sender\nEmail Address: $senderEmail\n\nMessage: $message";
-    mail($recipient, $subject, $mailBody);
-    sleep(1);
-    header("Location:footer.html"); 
-}
-?>
+
