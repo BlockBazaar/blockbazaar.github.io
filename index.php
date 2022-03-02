@@ -231,7 +231,7 @@
             </center>
         </div>
     </div>
-    <div class="text-white container-fluid position-relative justify-content-center text-center fs-5" id="bodyText">
+    <div class="text-white container-fluid position-relative justify-content-center text-center fs-5" id="bodyText" hidden>
         Write something here
     </div>
     <footer class="fixed-bottom">
