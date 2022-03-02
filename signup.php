@@ -63,7 +63,7 @@
 			var characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz!@#$%&()+=-<>/?[]{}";
 
 			for (var i = 0; i < 6; i++) {
-				randomString += " " + characters.charAt(Math.floor(Math.random() * characters.length));
+				randomString += characters.charAt(Math.floor(Math.random() * characters.length));
 			}
 			document.getElementById('mainCaptcha').value = randomString;
 			document.getElementById('userCaptcha').value = "";
