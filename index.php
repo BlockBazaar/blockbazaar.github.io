@@ -71,7 +71,7 @@
         footer {
             position: absolute;
             width: 100%;
-            background-color: rgba(9, 0, 29, 0.959);
+            background-color: rgba(9, 1, 29, 0.959);
             color: rgb(169, 209, 255);
             padding: 20px;
         }
