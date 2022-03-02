@@ -50,7 +50,7 @@
 			font-style: oblique;
 			font-family: cursive;
 			font-size: larger;
-			font-stretch: expanded;
+			letter-spacing: 5px;
 		}
 	</style>
 	<script>
