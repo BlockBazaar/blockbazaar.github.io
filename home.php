@@ -67,17 +67,17 @@
                     <li class="nav-item dropdown mb-2 me-md-2" id="navli">
                         <a class="dropdown-toggle btn" id="navbtn" data-bs-toggle="dropdown" href="#">User</a>
                         <ul class="dropdown-menu dropdown-menu-end" style="border-radius: 20px">
-                            <li><a class="dropdown-item" target="_self" href="disputes.php">Disputes</a>
+                            <li><a class="dropdown-item rounded-3" target="_self" href="disputes.php">Disputes</a>
                             </li>
-                            <li><a class="dropdown-item" target="_self" href="orders.php">Orders</a></li>
-                            <li><a class="dropdown-item" target="_self" href="ownedAssets.php">Owned
+                            <li><a class="dropdown-item rounded-3" target="_self" href="orders.php">Orders</a></li>
+                            <li><a class="dropdown-item rounded-3" target="_self" href="ownedAssets.php">Owned
                                     Assets</a></li>
-                            <li><a class="dropdown-item" target="_self" href="wishlist.php">Wishlist</a>
+                            <li><a class="dropdown-item rounded-3" target="_self" href="wishlist.php">Wishlist</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" target="_self" href="index.php">Logout</a></li>
+                            <li><a class="dropdown-item rounded-3" target="_self" href="index.php">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
