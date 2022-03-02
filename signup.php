@@ -186,7 +186,7 @@
 								</div>
 								<div class="col-sm-5">
 									<label class="form-label" for="zipCode">Zip Code</label>
-									<input type="text" pattern="[0-9]" class="form-control text-center" id="zipCode"
+									<input type="text" pattern="[0-9].{}" class="form-control text-center" id="zipCode"
 										name="zipCode">
 								</div>
 							</div>
