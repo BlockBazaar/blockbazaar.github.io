@@ -288,7 +288,7 @@ if ($con) {
 
 	$query = "INSERT INTO UserCredential (Full Name,Email,Contact Number,Date of Birth, Password,Address, Zip Code,Country, State, Currency) VALUES ($name,$mail,$con_num,$date,$password,$address,$zipcode,$country,$state,$currency)";
 	$result = pg_query($con, $query);
-	header("Location : index.php");
+	header("Location : signUpResponse.php");
 }
 pg_close($con);
 ?>
