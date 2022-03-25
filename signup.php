@@ -266,7 +266,7 @@
 </body>
 
 </html>
--<?php
+<?php
 $host = "ec2-52-201-124-168.compute-1.amazonaws.com";
 $user = "pcfuiaofaalxez";
 $pass = "8cf9be157e275bd1ac5c0e41155c79a2ca501f30a9345bdf35cc1a79709a83bb";
