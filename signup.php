@@ -267,10 +267,10 @@
 
 </html>
 <?php
-$host = "ec2-52-201-124-168.compute-1.amazonaws.com";
-$user = "pcfuiaofaalxez";
-$pass = "8cf9be157e275bd1ac5c0e41155c79a2ca501f30a9345bdf35cc1a79709a83bb";
-$db = "d30urd6dg1iirk";
+$host = "ec2-54-157-79-121.compute-1.amazonaws.com";
+$user = "ohsfiseoipojxy";
+$pass = "9df644967ceb554401483de43781e7427a2560d1d79e5f210f4048068f93cf88";
+$db = "db1qurm4o7elr8";
 $con = pg_connect ("host=$host dbname=$db user=$user password=$pass") or die ("Could not connect to server")
 if ($con) {
 	echo "Error : Unable to open database\n";
