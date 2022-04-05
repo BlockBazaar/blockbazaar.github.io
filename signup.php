@@ -286,7 +286,7 @@ if ($con) {
 	$state = $_POST['State'];
 	$currency = $_POST['Currency'];
 
-	$query = "INSERT INTO d30urd6dg1iirk(Full Name,Email,Contact Number,Date of Birth, Password,Address, Zip Code,Country, State, Currency) VALUES ($name,$mail,$con_num,$date,$password,$address,$zipcode,$country,$state,$currency)";
+	$query = "INSERT INTO usercredentials(Full Name,Email,Contact Number,Date of Birth, Password,Address, Zip Code,Country, State, Currency) VALUES ($name,$mail,$con_num,$date,$password,$address,$zipcode,$country,$state,$currency)";
 	$result = pg_query($con, $query);
 	header("location : signUpResponse.php");
 }
