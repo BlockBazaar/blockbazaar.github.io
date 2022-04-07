@@ -13,8 +13,8 @@
             die('Could not connect: ' . mysqli_error());
          }
          echo 'Connected successfully';
-         $name = 'debayan';
-         $password = 'abcd';
+         $name = 'alapan';
+         $password = 'deb$';
          $query = "INSERT INTO user2(name, password) values ($name,$password)";
          $retval = mysqli_query( $query, $conn );
          if(! $retval ) {
