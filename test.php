@@ -4,7 +4,7 @@
 </body>
 </html>
 <?php
-$servername = "localhost"
+$servername = "remotemysql.com:3306"
 $username = "gS467AnmIZ";
 $password = "mXgN6pphV7";
 
