@@ -4,7 +4,7 @@
    </head>
    <body>
       <?php
-         $dbhost = 'remotemysql.com:3036';
+         $dbhost = 'remotemysql.com:3306';
          $dbuser = 'gS467AnmIZ';
          $dbpass = 'mXgN6pphV7';
          $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
