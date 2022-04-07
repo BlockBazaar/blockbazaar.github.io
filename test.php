@@ -1,19 +1,19 @@
 <html>
-    <body>
-        Hello World
-</body>
+   <head>
+      <title>Connecting MySQL Server</title>
+   </head>
+   <body>
+      <?php
+         $dbhost = 'remotemysql.com:3306';
+         $dbuser = 'gS467AnmIZ';
+         $dbpass = 'mXgN6pphV7';
+         $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+         
+         if(! $conn ) {
+            die('Could not connect: ' . mysqli_error());
+         }
+         echo 'Connected successfully';
+         mysqli_close($conn);
+      ?>
+   </body>
 </html>
-<?php
-$servername = "remotemysql.com:3306"
-$username = "gS467AnmIZ";
-$password = "mXgN6pphV7";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password);
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
-?>
