@@ -4,12 +4,13 @@
    </head>
    <body>
       <?php
-         $dbhost = 'remotemysql.com:3306';
+         $dbhost = 'remotemysql.com:3036';
          $dbuser = 'gS467AnmIZ';
          $dbpass = 'mXgN6pphV7';
          $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
          
          if(! $conn ) {
+			 echo 'Could not connect'
             die('Could not connect: ' . mysqli_error());
          }
          echo 'Connected successfully';
