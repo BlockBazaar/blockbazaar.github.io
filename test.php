@@ -4,10 +4,11 @@
    </head>
    <body>
       <?php
-         $dbhost = 'remotemysql.com:3306';
-         $dbuser = 'gS467AnmIZ';
-         $dbpass = 'mXgN6pphV7';
-         $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+         $dbhost = "remotemysql.com:3306";
+         $dbuser = "gS467AnmIZ";
+         $dbpass = "mXgN6pphV7" ;
+         $db = "gS467AnmIZ";
+         $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
          
          if(! $conn ) {
             die('Could not connect: ' . mysqli_error());
@@ -17,7 +18,7 @@
          $password = 'adam123';
          $query = "INSERT INTO user2(name, password) values ('$name','$password')";
 		 mysqli_select_db('gS467AnmIZ');
-         $retval = mysqli_query( $query, $conn );
+         $retval = mysqli_query($conn, $query);
          if(! $retval ) {
             die('Could not enter data: ' . mysqli_error());
          }
