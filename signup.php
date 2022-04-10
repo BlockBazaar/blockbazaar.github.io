@@ -193,6 +193,21 @@
 									</select>
 								</div>								
 							</div>
+
+							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
+								<div class="col-sm-5">
+									<label class="form-label" for="address">
+										<font style="color: red;">*</font>Address
+									</label>
+									<input type="text" class="form-control text-center" id="address" name="address" maxlength="200" required>
+								</div>
+								<div class="col-sm-5">
+									<label class="form-label" for="zipCode">
+										<font style="color: red;">*</font>Zip Code
+									</label>
+									<input type="text" class="form-control text-center" id="zipCode" name="zipCode" maxlength="9" required>
+								</div>								
+							</div>
 							
 							<div class="row gx-3 gy-2 mt-2 justify-content-around align-items-end">
 								<div class="col-sm-4">
