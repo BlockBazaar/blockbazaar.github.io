@@ -119,11 +119,11 @@
                         <div class="container" id="login">
                             <form action="profile.php">
                                 <div class="form-outline mb-3 mt-3">
-                                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                                    <input type="text" class="form-control" id="email" name="email">
                                     <label class="form-label" for="email">Email</label>
                                 </div>
                                 <div class="form-outline mt-3 mb-3">
-                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                    <input type="password" class="form-control" id="pwd" name="pswd">
                                     <label class="form-label" for="pwd">Password</label>
                                 </div>
                                 <div class="modal-footer justify-content-center">
