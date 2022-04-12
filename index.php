@@ -117,22 +117,23 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="container" id="login">
-                            <div class="form-floating mb-3 mt-3">
-                                <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
-                                <label for="email">Email</label>
-                            </div>
-                            <div class="form-floating mt-3 mb-3">
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-                                <label for="pwd">Password</label>
-                            </div>
+                            <form action="profile.php">
+                                <div class="form-outline mb-3 mt-3">
+                                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                                    <label class="form-label" for="email">Email</label>
+                                </div>
+                                <div class="form-outline mt-3 mb-3">
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                    <label class="form-label" for="pwd">Password</label>
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <div class="mt-3">
+                                        <button type="reset" class="btn btn-primary me-md-2" value="reset">Reset</button>
+                                        <button type="button" class="btn btn-primary btn-block mb-4 me-md-2" data-bs-dismiss="modal" value="submit">Sign in</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </div>
-                </div>
-                <!-- Modal Footer -->
-                <div class="modal-footer justify-content-center">
-                    <div class="mt-3">
-                        <button type="reset" class="btn btn-primary me-md-2" value="reset">Reset</button>
-                        <button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit">Login</button>
                     </div>
                 </div>
             </div>
