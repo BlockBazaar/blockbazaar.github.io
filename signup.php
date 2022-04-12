@@ -156,7 +156,7 @@
 										$query = "SELECT Email FROM usercredentials WHERE Email='$email'";
 										$retval = mysqli_query($conn, $query);
 										if (!$retval) {
-											echo "<script>alert('User Already Exists')</script>";
+											echo "<script type=javaScript>alert('User Already Exists')</script>";
 										}
 										mysqli_close($conn);
 									}
