@@ -129,7 +129,7 @@
                                 <div class="modal-footer justify-content-center">
                                     <div class="mt-3">
                                         <button type="reset" class="btn btn-primary me-md-2" value="reset">Reset</button>
-                                        <button type="button" class="btn btn-primary btn-block mb-4 me-md-2" data-bs-dismiss="modal" value="submit">Sign in</button>
+                                        <button type="button" class="btn btn-primary btn-block me-md-2" data-bs-dismiss="modal" value="submit">Sign in</button>
                                     </div>
                                 </div>
                             </form>
