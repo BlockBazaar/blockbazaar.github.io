@@ -141,26 +141,6 @@
 										<font style="color: red;">*</font>Email
 									</label>
 									<input type="email" class="form-control text-center" id="email" name='email' required>
-									<?php
-									$dbhost = "remotemysql.com:3306";
-									$dbuser = "gS467AnmlZ";
-									$dbpass = "zW5EBWo1Q6";
-									$db = "gS467AnmlZ";
-									$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-
-									if (!$conn) {
-										die('Could not connect: ' . mysqli_error());
-									}
-									$email = $_REQUEST["email"];
-									if (isset($email)) {
-										$query = "SELECT Email FROM usercredentials WHERE Email='$email'";
-										$retval = mysqli_query($conn, $query);
-										if (!$retval) {
-											echo "<script type=javaScript>alert('User Already Exists')</script>";
-										}
-										mysqli_close($conn);
-									}
-									?>
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
@@ -261,6 +241,26 @@
 									<button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit">Sign Up</button>
 								</div>
 							</div>
+							<?php
+							$dbhost = "remotemysql.com:3306";
+							$dbuser = "gS467AnmlZ";
+							$dbpass = "zW5EBWo1Q6";
+							$db = "gS467AnmlZ";
+							$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+
+							if (!$conn) {
+								die('Could not connect: ' . mysqli_error());
+							}
+							$email = $_REQUEST["email"];
+							if (isset($_POST('submit'))) {
+								$query = "SELECT Email FROM usercredentials WHERE Email='$email'";
+								$retval = mysqli_query($conn, $query);
+								if (!$retval) {
+									echo "<script type=javaScript>alert('User Already Exists')</script>";
+								}
+								mysqli_close($conn);
+							}
+							?>
 						</form>
 					</div>
 				</div>
