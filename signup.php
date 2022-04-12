@@ -252,7 +252,7 @@
 								die('Could not connect: ' . mysqli_error());
 							}
 							$email = $_REQUEST["email"];
-							if(isset($_REQUEST['submit']))) {
+							if(isset($email))) {
 								$query = "SELECT Email FROM usercredentials WHERE Email='$email'";
 								$retval = mysqli_query($conn, $query);
 								if (!$retval) {
