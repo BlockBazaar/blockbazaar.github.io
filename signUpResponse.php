@@ -73,10 +73,8 @@
 	$date = $_REQUEST["dob"];
 	$password = $_REQUEST["pswd"];
 	$country = $_REQUEST["country"];
-	$address = $_REQUEST["address"];
-	$zipcode = $_REQUEST["zipCode"];
 	$currency = $_REQUEST["currency"];
-	$query = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Address, ZipCode, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$address', '$zipcode', '$currency')";
+	$query = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$currency')";
 
 	$retval = mysqli_query($conn, $query);
 	if (!$retval) {
