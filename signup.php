@@ -174,7 +174,7 @@
 									Password must be of atleast 8 characters and must have atleast <br> 1 uppercase
 									character, 1 lowercase character, 1 digit and 1 special character.
 								</div>
-							</div>							
+							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
 								<div class="col-sm-5">
 									<label class="form-label" for="country">
@@ -191,9 +191,24 @@
 										<option value="EUR">EUR</option>
 										<option value="INR">INR</option>
 									</select>
-								</div>								
+								</div>
 							</div>
-							
+
+							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
+								<div class="col-sm-5">
+									<label class="form-label" for="address">
+										<font style="color: red;">*</font>Address
+									</label>
+									<input type="text" class="form-control text-center" id="address" name="address" maxlength="200" required>
+								</div>
+								<div class="col-sm-5">
+									<label class="form-label" for="zipCode">
+										<font style="color: red;">*</font>Zip Code
+									</label>
+									<input type="text" class="form-control text-center" id="zipCode" name="zipCode" maxlength="9" required>
+								</div>
+							</div>
+
 							<div class="row gx-3 gy-2 mt-2 justify-content-around align-items-end">
 								<div class="col-sm-4">
 									<label class="form-label" for="mainCaptcha">CAPTCHA</label>
@@ -226,6 +241,26 @@
 									<button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit">Sign Up</button>
 								</div>
 							</div>
+							<?php
+							$dbhost = "remotemysql.com:3306";
+							$dbuser = "gS467AnmlZ";
+							$dbpass = "zW5EBWo1Q6";
+							$db = "gS467AnmlZ";
+							$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+
+							if (!$conn) {
+								die('Could not connect: ' . mysqli_error());
+							}
+							$email = $_REQUEST["email"];
+							if(isset($email))) {
+								$query = "SELECT Email FROM usercredentials WHERE Email='$email'";
+								$retval = mysqli_query($conn, $query);
+								if (!$retval) {
+									echo "<script type=javaScript>alert('User Already Exists')</script>";
+								}
+								mysqli_close($conn);
+							}
+							?>
 						</form>
 					</div>
 				</div>
