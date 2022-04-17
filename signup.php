@@ -1,3 +1,42 @@
+<?php
+	$dbhost = "remotemysql.com:3306";
+	$dbuser = "gS467AnmlZ";
+	$dbpass = "zW5EBWo1Q6";
+	$db = "gS467AnmlZ";
+	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+	if (!$conn) {
+		die('Could not connect: ' . mysqli_error());
+	}
+	$email = $_POST["email"];
+	$err = array();
+	$query1 = "SELECT Email FROM usercredentials WHERE Email='$email' ";
+	$retval1 = mysqli_query($conn, $query1);
+	if (mysqli_num_rows($retval1) > 0) {
+		$err['u'] = "User already exists";
+		echo "<script>alert('User Already Exists')</script>";
+	}
+	else	{
+		$name = $_POST["fullName"];
+		$mail = $_POST["email"];
+		$con_num = $_POST["contact"];
+		$date = $_POST["dob"];
+		$password = $_POST["pswd"];
+		$country = $_POST["country"];
+		$address = $_POST["address"];
+		$zipcode = $_POST["zipCode"];
+		$currency = $_POST["currency"];
+
+		$query2 = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Address, ZipCode, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$address', '$zipcode', '$currency')";
+
+		$retval2 = mysqli_query($conn, $query2);
+		if (!$retval2) {
+			die('Could not enter data: ' . mysqli_error());
+		}
+		echo "<script>alert('Account Successfully Created')</script>";
+	}
+	mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <header>
@@ -128,7 +167,7 @@
 			<div class="body">
 				<div class="container-fluid">
 					<div class="container" id="signUp">
-						<form action="signUpResponse.php" method="post" align="center" onsubmit="return formValidate();">
+						<form method="post" align="center" onsubmit="return formValidate();">
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
 								<div class="col-sm-5">
 									<label class="form-label" for="fullName">
@@ -141,6 +180,13 @@
 										<font style="color: red;">*</font>Email
 									</label>
 									<input type="email" class="form-control text-center" id="email" name='email' required>
+									<p class="text-danger">
+										<?php 
+											if(isset($err['u']))	{
+												echo $err['u'];
+											}
+										?>
+									</p>
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
@@ -241,26 +287,6 @@
 									<button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit">Sign Up</button>
 								</div>
 							</div>
-							<?php
-							$dbhost = "remotemysql.com:3306";
-							$dbuser = "gS467AnmlZ";
-							$dbpass = "zW5EBWo1Q6";
-							$db = "gS467AnmlZ";
-							$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-
-							if (!$conn) {
-								die('Could not connect: ' . mysqli_error());
-							}
-							$email = $_REQUEST["email"];
-							if(isset($email))) {
-								$query = "SELECT Email FROM usercredentials WHERE Email='$email'";
-								$retval = mysqli_query($conn, $query);
-								if (!$retval) {
-									echo "<script type=javaScript>alert('User Already Exists')</script>";
-								}
-								mysqli_close($conn);
-							}
-							?>
 						</form>
 					</div>
 				</div>
