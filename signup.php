@@ -181,13 +181,7 @@ mysqli_close($conn);
 										<font style="color: red;">*</font>Email
 									</label>
 									<input type="email" class="form-control text-center" id="email" name='email' required>
-									<p class="text-danger">
-										<?php
-										if (isset($err['u'])) {
-											echo $err['u'];
-										}
-										?>
-									</p>
+									<p class="text-danger"> <?php if (isset($err['u'])) echo $err['u']; ?> </p>
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
