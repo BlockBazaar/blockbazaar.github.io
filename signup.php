@@ -14,7 +14,6 @@ if (isset($_POST['submit'])) {
 	$retval1 = mysqli_query($conn, $query1);
 	if (mysqli_num_rows($retval1) > 0) {
 		$err['u'] = "User already exists";
-		echo "<script>alert('User Already Exists')</script>";
 	} else {
 		$name = $_POST["fullName"];
 		$mail = $_POST["email"];
@@ -32,7 +31,6 @@ if (isset($_POST['submit'])) {
 		if (!$retval2) {
 			die('Could not enter data');
 		}
-		echo "<script>alert('Account Successfully Created')</script>";
 	}
 }
 mysqli_close($conn);
