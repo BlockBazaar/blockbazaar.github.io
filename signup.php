@@ -1,4 +1,42 @@
+<?php
+$dbhost = "remotemysql.com:3306";
+$dbuser = "gS467AnmlZ";
+$dbpass = "zW5EBWo1Q6";
+$db = "gS467AnmlZ";
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+if (!$conn) {
+	die('Could not connect');
+}
+if (isset($_POST['submit'])) {
+	$mail = $_POST["email"];
+	$err = array();
+	$query1 = "SELECT Email FROM usercredentials WHERE Email='$mail' ";
+	$retval1 = mysqli_query($conn, $query1);
+	if (mysqli_num_rows($retval1) > 0) {
+		$err['u'] = "User already exists";
+		echo "<script>alert('User Already Exists')</script>";
+	} else {
+		$name = $_POST["fullName"];
+		$mail = $_POST["email"];
+		$con_num = $_POST["contact"];
+		$date = $_POST["dob"];
+		$password = $_POST["pswd"];
+		$country = $_POST["country"];
+		$address = $_POST["address"];
+		$zipcode = $_POST["zipCode"];
+		$currency = $_POST["currency"];
 
+		$query2 = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Address, ZipCode, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$address', '$zipcode', '$currency')";
+
+		$retval2 = mysqli_query($conn, $query2);
+		if (!$retval2) {
+			die('Could not enter data');
+		}
+		echo "<script>alert('Account Successfully Created')</script>";
+	}
+}
+mysqli_close($conn);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
