@@ -4,12 +4,12 @@ $dbuser = "gS467AnmlZ";
 $dbpass = "zW5EBWo1Q6";
 $db = "gS467AnmlZ";
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+$err = array();
 if (!$conn) {
 	die('Could not connect');
 }
 if (isset($_POST['submit'])) {
 	$mail = $_POST["email"];
-	$err = array();
 	$query1 = "SELECT Email FROM usercredentials WHERE Email='$mail' ";
 	$retval1 = mysqli_query($conn, $query1);
 	if (mysqli_num_rows($retval1) > 0) {
