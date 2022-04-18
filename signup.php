@@ -1,21 +1,21 @@
 <?php
-	$dbhost = "remotemysql.com:3306";
-	$dbuser = "gS467AnmlZ";
-	$dbpass = "zW5EBWo1Q6";
-	$db = "gS467AnmlZ";
-	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-	if (!$conn) {
-		die('Could not connect: ' . mysqli_error());
-	}
-	$email = $_POST["email"];
+$dbhost = "remotemysql.com:3306";
+$dbuser = "gS467AnmlZ";
+$dbpass = "zW5EBWo1Q6";
+$db = "gS467AnmlZ";
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+if (!$conn) {
+	die('Could not connect: ' . mysqli_error());
+}
+if (isset($_POST['submit'])) {
+	$mail = $_POST["email"];
 	$err = array();
-	$query1 = "SELECT Email FROM usercredentials WHERE Email='$email' ";
+	$query1 = "SELECT Email FROM usercredentials WHERE Email='$mail' ";
 	$retval1 = mysqli_query($conn, $query1);
 	if (mysqli_num_rows($retval1) > 0) {
 		$err['u'] = "User already exists";
 		echo "<script>alert('User Already Exists')</script>";
-	}
-	else	{
+	} else {
 		$name = $_POST["fullName"];
 		$mail = $_POST["email"];
 		$con_num = $_POST["contact"];
@@ -34,7 +34,8 @@
 		}
 		echo "<script>alert('Account Successfully Created')</script>";
 	}
-	mysqli_close($conn);
+}
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -181,10 +182,10 @@
 									</label>
 									<input type="email" class="form-control text-center" id="email" name='email' required>
 									<p class="text-danger">
-										<?php 
-											if(isset($err['u']))	{
-												echo $err['u'];
-											}
+										<?php
+										if (isset($err['u'])) {
+											echo $err['u'];
+										}
 										?>
 									</p>
 								</div>
@@ -284,7 +285,7 @@
 									<button type="reset" class="btn btn-primary me-md-2" value="reset" onclick="captcha()">Reset</button>
 								</div>
 								<div class="col-sm-4">
-									<button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit">Sign Up</button>
+									<button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit" name="submit" >Sign Up</button>
 								</div>
 							</div>
 						</form>
