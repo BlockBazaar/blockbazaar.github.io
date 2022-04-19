@@ -51,37 +51,44 @@
 	<div class="align-items-center container-fluid justify-content-center mainDiv" id="signUp">
 		<div class="text-center justify-content-center">
 			<div class="header fw-bold justify-content-center text-center" style="font-size: 36px; font-variant: small-caps;">
-				Welcome to BlockBazaar
+				<?php
+				$dbhost = "remotemysql.com:3306";
+				$dbuser = "gS467AnmlZ";
+				$dbpass = "zW5EBWo1Q6";
+				$db = "gS467AnmlZ";
+				$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+
+				if (!$conn) {
+					die('Could not connect: ' . mysqli_error());
+				}
+				$mail = $_REQUEST["email"];
+				$query1 = "SELECT * from usercredentials WHERE Email='$mail'";
+
+				$retval1 = mysqli_query($conn, $query);
+				if (mysqli_num_rows($retval1) > 0) {
+					echo "User Already Exists, Please Signin";
+				} else {
+					$name = $_REQUEST["fullName"];
+					$con_num = $_REQUEST["contact"];
+					$date = $_REQUEST["dob"];
+					$password = $_REQUEST["pswd"];
+					$country = $_REQUEST["country"];
+					$address = $_REQUEST["address"];
+					$zipcode = $_REQUEST["zipCode"];
+					$currency = $_REQUEST["currency"];
+					$query = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Address, ZipCode, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$address', '$zipcode', '$currency')";
+
+					$retval = mysqli_query($conn, $query);
+					if (!$retval) {
+						die('Could not enter data: ' . mysqli_error());
+					}
+					echo "Welcome to BlockBazaar";
+				}
+				mysqli_close($conn);
+				?>
 			</div>
 			<p style="font-size: 24px; padding: 30px;">Enjoy shopping!</p>
 			<a class="btn btn-primary me-md-2" target="_self" href="index.php" role="button" style="width: fit-content;">Get Started</a>
 		</div>
 	</div>
-	<?php
-	$dbhost = "remotemysql.com:3306";
-	$dbuser = "gS467AnmlZ";
-	$dbpass = "zW5EBWo1Q6";
-	$db = "gS467AnmlZ";
-	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-
-	if (!$conn) {
-		die('Could not connect: ' . mysqli_error());
-	}
-	$name = $_REQUEST["fullName"];
-	$mail = $_REQUEST["email"];
-	$con_num = $_REQUEST["contact"];
-	$date = $_REQUEST["dob"];
-	$password = $_REQUEST["pswd"];
-	$country = $_REQUEST["country"];
-	$address = $_REQUEST["address"];
-	$zipcode = $_REQUEST["zipCode"];
-	$currency = $_REQUEST["currency"];
-	$query = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Address, ZipCode, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$address', '$zipcode', '$currency')";
-
-	$retval = mysqli_query($conn, $query);
-	if (!$retval) {
-		die('Could not enter data: ' . mysqli_error());
-	}
-	mysqli_close($conn);
-	?>
 </body>

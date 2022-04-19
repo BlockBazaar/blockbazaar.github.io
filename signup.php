@@ -1,41 +1,3 @@
-<?php
-$dbhost = "remotemysql.com:3306";
-$dbuser = "gS467AnmlZ";
-$dbpass = "zW5EBWo1Q6";
-$db = "gS467AnmlZ";
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-$err = array();
-if (!$conn) {
-	die('Could not connect');
-}
-if (isset($_POST['submit'])) {
-	$mail = $_POST["email"];
-	$query1 = "SELECT Email FROM usercredentials WHERE Email='$mail' ";
-	$retval1 = mysqli_query($conn, $query1);
-	if (mysqli_num_rows($retval1) > 0) {
-		$err['u'] = "User already exists";
-	} else {
-		$name = $_POST["fullName"];
-		$mail = $_POST["email"];
-		$con_num = $_POST["contact"];
-		$date = $_POST["dob"];
-		$password = $_POST["pswd"];
-		$country = $_POST["country"];
-		$address = $_POST["address"];
-		$zipcode = $_POST["zipCode"];
-		$currency = $_POST["currency"];
-
-		$query2 = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Address, ZipCode, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$address', '$zipcode', '$currency')";
-
-		$retval2 = mysqli_query($conn, $query2);
-		if (!$retval2) {
-			die('Could not enter data');
-		}
-	}
-}
-mysqli_close($conn);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <header>
@@ -166,7 +128,7 @@ mysqli_close($conn);
 			<div class="body">
 				<div class="container-fluid">
 					<div class="container" id="signUp">
-						<form method="post" align="center" onsubmit="return formValidate();">
+						<form action="signUpResponse.php" method="post" align="center" onsubmit="return formValidate();">
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
 								<div class="col-sm-5">
 									<label class="form-label" for="fullName">
@@ -178,8 +140,7 @@ mysqli_close($conn);
 									<label class="form-label" for="email">
 										<font style="color: red;">*</font>Email
 									</label>
-									<input type="email" class="form-control text-center" id="email" name='email' required>
-									<p class="text-danger"> <?php if (isset($err['u'])) echo $err['u']; ?> </p>
+									<input type="email" class="form-control text-center" id="email" name='email' required>									
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
@@ -277,7 +238,7 @@ mysqli_close($conn);
 									<button type="reset" class="btn btn-primary me-md-2" value="reset" onclick="captcha()">Reset</button>
 								</div>
 								<div class="col-sm-4">
-									<button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit" name="submit" >Sign Up</button>
+									<button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit">Sign Up</button>
 								</div>
 							</div>
 						</form>
