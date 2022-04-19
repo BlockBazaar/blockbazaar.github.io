@@ -102,10 +102,6 @@
 </header>
 
 <body onload="bodyLoad()">
-	<span id="particles-js">
-	</span>
-	<script src="js/particles.js"></script>
-	<script src="js/app.js"></script>
 	<div class="align-content-center justify-content-center rounded-3 mainDiv" id="signUp">
 		<div class="justify-content-center" style="padding: 20px;">
 			<div class="header fs-1 fw-bold justify-content-center text-center">
