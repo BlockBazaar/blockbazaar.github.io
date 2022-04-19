@@ -96,7 +96,7 @@
                         <a class="btn" id="navbtn" data-bs-toggle="modal" href="#loginModal">Login</a>
                     </li>
                     <li class="nav-item mb-2 me-md-2" id="navli">
-                        <a class="btn" id="navbtn" target="_self" href="signup.php">Sign Up</a>
+                        <a class="btn" id="navbtn" target="_self" href="signUp.php">Sign Up</a>
                     </li>
                     <li class="nav-item mb-2 me-md-2" id="navli">
                         <a class="btn" id="navbtn" data-bs-toggle="modal" href="#reachUsModal">Reach Us</a>
