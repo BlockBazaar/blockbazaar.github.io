@@ -8,9 +8,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<style>
 		body {
-			background-image: url("./img/galaxyBackground.jpg");
-			background-blend-mode: overlay;
-			background-color: rgba(0, 0, 0, 0.269);
+			background-color: white;
 			height: 100%;
 			width: 100%;
 		}
@@ -27,18 +25,6 @@
 			margin: auto;
 			border-width: 1px;
 			border-radius: 20px;
-		}
-
-		#particles-js canvas {
-			display: block;
-			position: fixed;
-			z-index: -1;
-		}
-
-		#particles-js {
-			position: fixed;
-			width: 100%;
-			height: 100%;
 		}
 
 		#mainCaptcha {
@@ -121,7 +107,7 @@
 	<script src="js/particles.js"></script>
 	<script src="js/app.js"></script>
 	<div class="align-content-center justify-content-center rounded-3 mainDiv" id="signUp">
-		<div class="justify-content-center text-light" style="padding: 20px; background-color: rgba(0, 0, 32, 0.799);">
+		<div class="justify-content-center" style="padding: 20px;">
 			<div class="header fs-1 fw-bold justify-content-center text-center">
 				Sign Up
 			</div>
