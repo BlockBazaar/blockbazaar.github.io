@@ -128,7 +128,7 @@
 			<div class="body">
 				<div class="container-fluid">
 					<div class="container" id="signUp">
-						<form action="signUpResponse.php" method="post" align="center" onsubmit="return formValidate();">
+						<form action="signUpResponse.php" method="post" align="center" onsubmit="formValidate()">
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
 								<div class="col-sm-5">
 									<label class="form-label" for="fullName">
