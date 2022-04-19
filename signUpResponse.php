@@ -64,7 +64,7 @@
 				$mail = $_REQUEST["email"];
 				$query1 = "SELECT * from usercredentials WHERE Email='$mail'";
 
-				$retval1 = mysqli_query($conn, $query);
+				$retval1 = mysqli_query($conn, $query1);
 				if (mysqli_num_rows($retval1) > 0) {
 					echo "User Already Exists, Please Signin";
 				} else {
@@ -76,10 +76,10 @@
 					$address = $_REQUEST["address"];
 					$zipcode = $_REQUEST["zipCode"];
 					$currency = $_REQUEST["currency"];
-					$query = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Address, ZipCode, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$address', '$zipcode', '$currency')";
+					$query2 = "INSERT INTO usercredentials(FullName, Email, ContactNumber, DOB, Password, Country, Address, ZipCode, Currency) VALUES ('$name', '$mail', '$con_num', '$date', '$password', '$country', '$address', '$zipcode', '$currency')";
 
-					$retval = mysqli_query($conn, $query);
-					if (!$retval) {
+					$retval2 = mysqli_query($conn, $query2);
+					if (!$retval2) {
 						die('Could not enter data: ' . mysqli_error());
 					}
 					echo "Welcome to BlockBazaar";
@@ -88,7 +88,7 @@
 				?>
 			</div>
 			<p style="font-size: 24px; padding: 30px;">Enjoy shopping!</p>
-			<a class="btn btn-primary me-md-2" target="_self" href="index.php" role="button" style="width: fit-content;">Get Started</a>
+			<a class="btn btn-primary me-md-2" target="_self" href="index.php" role="button" style="width: fit-content;">Start shopping</a>
 		</div>
 	</div>
 </body>
