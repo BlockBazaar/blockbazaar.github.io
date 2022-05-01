@@ -74,6 +74,9 @@
             box-shadow: 3px 3px 3px 3px gray;
         }
 
+        .offcanvas{
+            height: 80vh;
+        }
 
         .section-title {
                 text-align: center;
@@ -114,6 +117,44 @@
             .section-title p {
                 margin-bottom: 0;
             }
+
+            * {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
         @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
             section{
@@ -214,7 +255,7 @@
                     <h1> Product 1</h1>
                     <h2>brand-name</h2>
                     <p>intro</p>
-                    <img src="img/p1.png" class="col text-center" alt="...">
+                    <img src="img/p1.png" class="col text-center" alt="..." style="">
                 </div>
                 <div class="col-sm-6 text-center" style="padding: 20px 20px 20px 20px;">
                     <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -280,15 +321,121 @@
                     </div>
                     <div class="row">
                         <div class="col"  style="padding-top: 50px;">
-                            <a href=""><i class="fa-brands fa-gratipay"></i> Wishlist</a>
+                            <a href=""><i class="fa-brands fa-gratipay"></i> Wishlist </a>
                         </div>
                         <div class="col"  style="padding-top: 50px;">
-                            <button type="button" class="btn btn-success">Buy Now</button>
+                            <button type="button" class="btn btn-success" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Buy Now</button>
                         </div>
                         <div class="col text-start"  style="padding-top: 50px; ">
                             <button type="button" class="btn btn-warning">Add to Cart</button>
                         </div>
                     </div>
+                    <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                          <h4 id="offcanvasTopLabel">Contract Details</h4>
+                          <h6 style="font-weight: lighter;">This is the details for the contract based on your purchase. Please go through it carefully and submit.</h6>
+                          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="row">
+                                <div class="column">
+                                  <table>
+                                    <tr>
+                                      <th colspan="3">Contract Metadata</th>  
+                                    </tr>
+                                    <tr>
+                                        <td>Contract Version</td>
+                                        <td>1.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contract Category</td>
+                                        <td>Type II</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Expiration Date</td>
+                                        <td>19.06.22</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class="column">
+                                  <table>
+                                    <tr>
+                                        <th colspan="3">Merchant ID</th>  
+                                      </tr>
+                                      <tr>
+                                          <td>Global Unique Identifier</td>
+                                          <td>--</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Uncompressed EC public key</td>
+                                          <td>--</td>
+                                      </tr>
+                                      <tr>
+                                          <td>PGP key</td>
+                                          <td>--</td>
+                                      </tr>
+                                  </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                  <table>
+                                    <tr>
+                                        <th colspan="3">Item Data Fields</th>  
+                                    </tr>
+                                    <tr>
+                                          <td>Item Title</td>
+                                          <td>--</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Price</td>
+                                          <td>--</td>
+                                    </tr>
+                                    <tr>
+                                          <td>Quantity</td>
+                                          <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Region</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shipping Cost</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estimated Delivery Details</td>
+                                        <td>--</td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <div class="column">
+                                    <table>
+                                      <tr>
+                                        <th colspan="3">Other INFO</th>  
+                                      </tr>
+                                      <tr>
+                                          <td>Buyer ID</td>
+                                          <td>--</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Notary ID</td>
+                                          <td>--</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Escrow Multisignature</td>
+                                          <td>--</td>
+                                      </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <form action="/action_page.php">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">I declare that have read the above details of the contract and agree to continue with the terms and conditions</label><br>
+                                <input type="submit" value="Submit" style="background-color: #fd531f; color: white; margin-top: 10px;">
+                            </form>                                      
+                        </div>
+                      </div>
                 </div>
               </div>
         </div>

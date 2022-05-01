@@ -96,7 +96,7 @@
                         <a class="btn" id="navbtn" data-bs-toggle="modal" href="#loginModal">Login</a>
                     </li>
                     <li class="nav-item mb-2 me-md-2" id="navli">
-                        <a class="btn" id="navbtn" target="_self" href="signUp.php">Sign Up</a>
+                        <a class="btn" id="navbtn" target="_self" href="signup.php">Sign Up</a>
                     </li>
                     <li class="nav-item mb-2 me-md-2" id="navli">
                         <a class="btn" id="navbtn" data-bs-toggle="modal" href="#reachUsModal">Reach Us</a>
@@ -117,23 +117,22 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="container" id="login">
-                            <form action="profile.php">
-                                <div class="form-outline mb-3 mt-3">
-                                    <label class="form-label" for="email">Email</label>
-                                    <input type="text" class="form-control" id="email" name="email">
-                                </div>
-                                <div class="form-outline mt-3 mb-3">
-                                    <label class="form-label" for="pwd">Password</label>
-                                    <input type="password" class="form-control" id="pwd" name="pswd">
-                                </div>
-                                <div class="modal-footer justify-content-center">
-                                    <div class="mt-3">
-                                        <button type="reset" class="btn btn-primary me-md-2" value="reset">Reset</button>
-                                        <button type="button" class="btn btn-primary btn-block me-md-2" value="submit">Sign in</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <div class="form-floating mb-3 mt-3">
+                                <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="form-floating mt-3 mb-3">
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <label for="pwd">Password</label>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer justify-content-center">
+                    <div class="mt-3">
+                        <button type="reset" class="btn btn-primary me-md-2" value="reset">Reset</button>
+                        <button type="submit" class="btn btn-danger btn-primary me-md-2" data-bs-dismiss="modal" value="submit">Login</button>
                     </div>
                 </div>
             </div>
@@ -232,7 +231,7 @@
             </center>
         </div>
     </div>
-    <div class="text-white container-fluid position-relative justify-content-center text-center fs-5" id="bodyText" hidden>
+    <div class="text-white container-fluid position-relative justify-content-center text-center fs-5" id="bodyText">
         Write something here
     </div>
     <footer class="fixed-bottom">

@@ -1,25 +1,3 @@
-<?php 
-  $dbhost = "remotemysql.com:3306";
-  $dbuser = "gS467AnmlZ";
-	$dbpass = "zW5EBWo1Q6";
-	$db = "gS467AnmlZ";
-  mysql_connect($dbhost, $dbuser, $dbpass);
-  mysql_select_db($db);
-  if (isset($_POST['email'])) {
-      $mail = $_POST['email'];
-      $password = $_POST['pswd'];
-      $sql = "select * from usercredentials where Email = '"$mail"' AND Password = '"$password"' limit 1";
-      $res = mysql_query($sql);
-      if (mysql_num_rows($res) == 1) {
-          echo "Login successful";
-          exit()
-      }
-      else {
-          echo "Incorrect Credentials";
-          exit();
-      }
-  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <header>
@@ -38,7 +16,8 @@
         background-color: orangered;
         transition: 0.5s;
       }
-      
+      .side-navbar li{
+      }
       .nav-link:active,
       .nav-link:focus,
       .nav-link:hover {
@@ -103,7 +82,7 @@
     <ul class="nav flex-column text-white w-100 text">
       
       <a href="" target="" class="nav-link h3 text-white my-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
-							<i class="fa-solid fa-user">  A B</i>
+							<i class="fa-solid fa-user" style="">  A B</i>
       </a>
       <li href="#" class="">
         <a class="nav-link" href="" target="iframe_a">Home</a>
