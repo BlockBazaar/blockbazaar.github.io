@@ -85,25 +85,25 @@
 							<i class="fa-solid fa-user" style="">  A B</i>
       </a>
       <li href="#" class="">
-        <a class="nav-link" href="" target="iframe_a">Home</a>
-      </li>
-      <li href="#" class="">
-        <a class="nav-link" href="product.html" target="iframe_a">Products</a>
+        <a class="nav-link" href="product.php" target="iframe_a">Products</a>
       </li>
       <li href="#" class="">
         <a class="nav-link" href="" target="iframe_a"> My Account</a>
       </li>
       <li href="#" class="">
-        <a class="nav-link" href="cart.html" target="iframe_a">Cart</a>
+        <a class="nav-link" href="cart.php" target="iframe_a">Cart</a>
       </li>
       <li href="#" class="">
-        <a class="nav-link" href="" target="iframe_a">Orders</a>
+        <a class="nav-link" href="orders.php" target="iframe_a">Orders</a>
       </li>
       <li href="#" class="">
-        <a class="nav-link" href="" target="iframe_a">Need a Help?</a>
-      </li>
+        <a class="nav-link" href="wishlist.php" target="iframe_a">Wishlist</a>
+      </li> 
       <li href="#" class="">
-        <a class="nav-link" href="" target="iframe_a"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+        <a class="nav-link" href="wallet.php" target="iframe_a">Wallet</a>
+      </li>        
+      <li href="#" class="">
+        <a class="nav-link" href="logout.php" target="_self"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
       </li>
       <li></li>
     </ul>
