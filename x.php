@@ -20,3 +20,27 @@
       }
   }
 ?>
+
+<?php
+$dbhost = "remotemysql.com:3306";
+$dbuser = "gS467AnmlZ";
+$dbpass = "zW5EBWo1Q6";
+$db = "gS467AnmlZ";
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+
+if (!$conn) {
+	die('Could not connect: ' . mysqli_error());
+}
+$mail = $_REQUEST['email'];
+$password = $_REQUEST['pswd'];
+$query = "SELECT * from usercredentials WHERE Email='$mail' AND Password='$password'";
+$res = mysqli_query($conn, $query);
+if (mysqli_num_rows($res) > 0) {
+    $_SESSION["errorMessage"] = "Invalid Credentials";
+    header("Location: ./index.php");
+} else {
+    header("Location: ./profile.php");
+}
+mysqli_close($conn);
+exit();
+?>
