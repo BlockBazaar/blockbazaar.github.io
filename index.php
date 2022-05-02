@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	<nav class="navbar sticky-top navbar-expand-lg ">
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light">
 		<div class="container-fluid">
 			<a class="navbar_brand" href="#">
 				<img class="logo" src="img/bb-logo.png" alt="" style="" />
@@ -59,7 +59,7 @@
 			<div class="modal-content" style="border-radius: 20px; width: auto;">
 				<!-- Modal Header -->
 				<div class="modal-header">
-					<h4 class="modal-title">Login</h4>
+					<h4 class="modal-title" style="color: rgb(57, 73, 143);">Login</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
 				<!-- Modal body -->
@@ -229,10 +229,9 @@
 					<div class="col-lg-3 col-md-6 footer-links">
 						<h4>Others</h4>
 						<ul>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Connect Us</a></li>
 							<li><i class="bx bx-chevron-right"></i> <a href="#">Our Mission</a></li>
 							<li><i class="bx bx-chevron-right"></i> <a href="#">FAQs</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a href="#">Send a Query</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a data-bs-toggle="modal" href="#queryModal" id="query">Send a Query</a></li>
 						</ul>
 					</div>
 
@@ -250,6 +249,48 @@
 			</div>
 		</div>
 	</footer>
+	<div class="modal fade align-content-center" id="queryModal">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content " style="border-radius: 20px;">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Send a Query</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="container-fluid">
+						</br>
+						<div class="container" id="reachUs">
+							<div class="form-floating mb-3 mt-3">
+								<input type="text" class="form-control" id="fullName" placeholder="Full Name" name="fullName" required>
+								<label for="fullName">
+									<font style="color: red; ">*</font>Full Name
+								</label>
+							</div>
+							<div class="form-floating mb-3 mt-3">
+								<input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+								<label for="email">
+									<font style="color: red; ">*</font>Email
+								</label>
+							</div>
+							<div class="form-floating mt-3 mb-3">
+								<textarea name="userMessage" id="userMsg" class="form-control" cols="20" rows="5" placeholder="Message"></textarea>
+								<label for="userMsg">Message</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Modal Footer -->
+				<div class="modal-footer justify-content-center">
+					<div class="mt-3">
+						<button type="reset" class="btn btn-primary me-md-2" style="color: black;" value="reset">Reset</button>
+						<button type="submit" class="btn btn-danger btn-primary me-md-2" style="color: black;" data-bs-dismiss="modal" value="submit">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
