@@ -85,10 +85,13 @@
 							<i class="fa-solid fa-user" style="">  A B</i>
       </a>
       <li href="#" class="">
-        <a class="nav-link" href="product.php" target="iframe_a">Products</a>
+        <a class="nav-link" href="myAccount.php" target="iframe_a"> My Account</a>
       </li>
       <li href="#" class="">
-        <a class="nav-link" href="" target="iframe_a"> My Account</a>
+        <a class="nav-link" href="catalogue.php" target="iframe_a">Catalogue</a>
+      </li>
+      <li href="#" class="">
+        <a class="nav-link" href="ownedAssets.php" target="iframe_a">My Assets</a>
       </li>
       <li href="#" class="">
         <a class="nav-link" href="cart.php" target="iframe_a">Cart</a>
