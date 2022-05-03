@@ -49,13 +49,13 @@
 	</span>
 	<script src="js/particles.js"></script>
 	<script src="js/app.js"></script>
-	<div class="align-items-center container-fluid justify-content-center mainDiv" id="signUp">
+	<div class="align-items-center container-fluid justify-content-center mainDiv" id="listing">
 		<div class="text-center justify-content-center">
 			<div class="header fw-bold justify-content-center text-center" style="font-size: 36px; font-variant: small-caps;">
-				Welcome to Block Bazaar
+				Product Listed Successfully
             </div>
             <p style="font-size: 24px; padding: 30px;">Enjoy shopping!</p>
-			<a class="btn btn-primary me-md-2" target="_self" href="index.php" role="button" style="width: fit-content;">Get Started</a>
+			<a class="btn btn-primary me-md-2" target="_self" href="catalogue.php" role="button" style="width: fit-content;">Go to Marketplace</a>
 		</div>
 	</div>
 </body>
