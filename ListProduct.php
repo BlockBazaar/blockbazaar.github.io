@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style_sheets/home.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         .mainDiv {
@@ -20,15 +21,28 @@
             border-width: 1px;
             border-radius: 20px;
         }
+        .form1{
+            background-color: rgb(54, 54, 54);
+            padding: 2vh;
+            margin: 20vh;
+            border-radius: 5vh;
+        }
+        .form-control, .btn{
+            border-radius: 20vh;
+        }
+        h2{
+            background-color: orangered;
+            color: white;
+            padding: 1vh;
+            border-radius: 20vh;
+        }
     </style>
 </header>
 
 <body>
     <div class="align-content-center justify-content-center rounded-3 mainDiv">
-        <div class="justify-content-center text-light" style="padding: 20px; background-color: rgba(0, 0, 32, 0.799);">
-            <div class="header fs-1 fw-bold justify-content-center text-center">
-                Product Listing
-            </div>
+        <div class="form1 justify-content-center text-light" style="">
+            <h2 class="d-flex align-items-center justify-content-center">Product Listing</h2>
             <div class="body">
                 <div class="container-fluid">
                     <div class="container" id="listing">
@@ -78,7 +92,7 @@
                                     <button type="reset" class="btn btn-primary me-md-2" value="reset" onclick="captcha()">Reset</button>
                                 </div>
                                 <div class="col-sm-4">
-                                    <button type="submit" class="btn btn-danger btn-primary me-md-2" value="submit">List Product</button>
+                                    <button type="submit" class="btn btn-danger btn-primary me-md-2" style="background-color: orangered; color: white;" value="submit">List Product</button>
                                 </div>
                             </div>
                         </form>

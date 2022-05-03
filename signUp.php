@@ -8,9 +8,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<style>
 		body {
-			background-image: url("./img/galaxyBackground.jpg");
-			background-blend-mode: overlay;
-			background-color: rgba(0, 0, 0, 0.269);
+			background-image: url("./img/signup.webp");
+			background-blend-mode:overlay;
+			background-color: rgba(0, 0, 0, 0.671);
 			height: 100%;
 			width: 100%;
 		}
@@ -51,6 +51,15 @@
 			font-family: cursive;
 			font-size: larger;
 		}
+		.form-control, .btn{
+			border-radius: 20vh;
+		}
+		h2{
+            background-color: orangered;
+            color: white;
+            padding: 1vh;
+            border-radius: 20vh;
+        }
 	</style>
 	<script>
 
@@ -121,10 +130,8 @@
 	<script src="js/particles.js"></script>
 	<script src="js/app.js"></script>
 	<div class="align-content-center justify-content-center rounded-3 mainDiv" id="signUp">
-		<div class="justify-content-center text-light" style="padding: 20px; background-color: rgba(0, 0, 32, 0.799);">
-			<div class="header fs-1 fw-bold justify-content-center text-center">
-				Sign Up
-			</div>
+		<div class="justify-content-center text-light" style="padding: 20px; background-color: rgb(54, 54, 54);">
+			<h2 class="d-flex align-items-center justify-content-center">Sign Up</h2>
 			<div class="body">
 				<div class="container-fluid">
 					<div class="container" id="signUp">
@@ -248,12 +255,12 @@
 										role="button">Back</a>
 								</div>
 								<div class="col-sm-2">
-									<button type="reset" class="btn btn-primary me-md-2" value="reset"
+									<button type="reset" class="btn btn-primary me-md-2" value="reset" style="background-color: rgb(255, 20, 20)"
 										onclick="captcha()">Reset</button>
 								</div>
 								<div class="col-sm-4">
-									<button type="submit" class="btn btn-danger btn-primary me-md-2"
-										data-bs-dismiss="modal" value="submit">Sign Up</button>
+									<button type="submit" class="btn btn-primary me-md-2"
+										data-bs-dismiss="modal" style="background-color: rgb(0, 104, 0)" value="submit">Sign Up</button>
 								</div>
 							</div>
 						</form>
