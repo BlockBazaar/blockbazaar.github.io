@@ -1,3 +1,7 @@
+<?php
+require 'conn.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <header>
@@ -54,14 +58,6 @@
 
 <body>
 	<?php include 'sidenav.php'; ?>
-	<?php
-	require 'conn.php';
-	$query = "SELECT * FROM usercredentials WHERE user_id='$_SESSION[user_id]'";
-	$res = mysqli_query($con, $query) or die(mysqli_error());
-	$fetch = mysqli_fetch_array($res);
-
-	echo "<h2 class='text-success'> " . $fetch['username'] . "</h2>";
-	?>
 	<section>
 		<div class="section-title">
 			<h2>Home</h2>
@@ -82,16 +78,12 @@
 			</tr>
 			<tr>
 				<td>Email-id</td>
-				<td>sarkarxxamit@gmail.com</td>
+				<td><?php echo $_SESSION['Email']; ?></td>
 			</tr>
 			<tr>
 				<td>Address</td>
 				<td></td>
-			</tr>
-			<tr>
-				<td>BlockBazaar-ID</td>
-				<td>BB62xx81</td>
-			</tr>
+			</tr>			
 			<tr>
 				<td>Wallet Balance</td>
 				<td>627</td>

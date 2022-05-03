@@ -105,7 +105,7 @@
                                   <i class="fa-solid fa-user" style="color:#fd531f;">  A B</i>
             </a>
             <li href="#" class="">
-              <a class="nav-link" href="home.php">Home</a>
+              <a class="nav-link" href="profile.php">Home</a>
             </li>
             <li href="#" class="">
               <a class="nav-link" href="profile.php">My Acoount</a>
@@ -126,7 +126,7 @@
               <a class="nav-link" href="">Help</a>
             </li>
             <li href="#" class="">
-              <a class="nav-link" href=""><i class="fa-solid fa-arrow-right-from-bracket" style="color: #fd531f;"></i> Sign Out</a>
+              <a class="nav-link" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #fd531f;"></i> Sign Out</a>
             </li>
             <li></li>
           </ul>

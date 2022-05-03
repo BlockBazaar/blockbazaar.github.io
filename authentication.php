@@ -17,7 +17,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $count = mysqli_num_rows($result);
 
 if ($count > 0) {
-	$_SESSION['Email']=$fetch['Email'];
+	$_SESSION['Email']=$email;
 	header("Location: ./profile.php");
 } else {
 	echo "<h1> Login failed. Invalid email or password.</h1>";
