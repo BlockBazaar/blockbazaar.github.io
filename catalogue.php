@@ -27,49 +27,6 @@
 			font-family: "Poppins", sans-serif;
 		}
 
-		.section-title {
-			text-align: center;
-			padding-top: 12vh;
-			padding-bottom: 30px;
-			background-color: white;
-			width: 100%;
-		}
-
-		.section-title h2 {
-			font-size: 32px;
-			font-weight: bold;
-			text-transform: uppercase;
-			margin-bottom: 20px;
-			padding-bottom: 20px;
-			position: relative;
-			color: #37517e;
-		}
-
-		.section-title h2::before {
-			content: "";
-			position: absolute;
-			display: block;
-			width: 120px;
-			height: 1px;
-			background: #ddd;
-			bottom: 1px;
-			left: calc(50% - 60px);
-		}
-
-		.section-title h2::after {
-			content: "";
-			position: absolute;
-			display: block;
-			width: 40px;
-			height: 3px;
-			background: #fd531f;
-			bottom: 0;
-			left: calc(50% - 20px);
-		}
-
-		.section-title p {
-			margin-bottom: 0;
-		}
 
 		aside.context {
 			text-align: center;
