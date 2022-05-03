@@ -6,7 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<link href="style_sheets/home.css" rel="stylesheet">
+
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
@@ -217,9 +219,12 @@ form .btn.btn-primary:hover {
     </style>
 </header>
 <body>
+    <div class="section-title">
+        <h2>Payment</h2>
+    </div>
     <div class="container bg-light d-md-flex align-items-center">
         <div class="card box1 shadow-sm p-md-5 p-md-5 p-4">
-            <div class="fw-bolder mb-4"><span class="fas fa-dollar-sign"></span><span class="ps-1">599.00</span></div>
+            <div class="fw-bolder mb-4"></span><span class="ps-1">INR 599.00</span></div>
             <div class="d-flex flex-column">
                 <div class="d-flex align-items-center justify-content-between text"> <span class="">Discount</span> <span class="fas fa-dollar-sign"><span class="ps-1">1.99</span></span> </div>
                 <div class="d-flex align-items-center justify-content-between text mb-4"> <span>Total</span> <span class="fas fa-dollar-sign"><span class="ps-1">600.99</span></span> </div>
@@ -237,9 +242,7 @@ form .btn.btn-primary:hover {
                 <div class="btn btn-primary bar"><span class="fas fa-bars"></span></div>
             </div>
             <ul class="nav nav-tabs mb-3 px-md-4 px-2">
-                <li class="nav-item"> <a class="nav-link px-2 active" aria-current="page" href="#">Credit Card</a> </li>
-                <li class="nav-item"> <a class="nav-link px-2" href="#">Mobile Payment</a> </li>
-                <li class="nav-item ms-auto"> <a class="nav-link px-2" href="#">+ More</a> </li>
+                <li class="nav-item"> <a class="nav-link px-2 active" aria-current="page" href="#">Card</a> </li>
             </ul>
             <div class="px-md-5 px-4 mb-4 d-flex align-items-center">
                 <div class="btn btn-success me-4"><span class="fas fa-plus"></span></div>
@@ -264,7 +267,7 @@ form .btn.btn-primary:hover {
                     </div>
                     <div class="col-12">
                         <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Name</span>
-                            <div class="inputWithIcon"> <input class="form-control text-uppercase" type="text" value="valdimir berezovkiy"> <span class="far fa-user"></span> </div>
+                            <div class="inputWithIcon"> <input class="form-control text-uppercase" type="text" value="amit sarkar"> <span class="far fa-user"></span> </div>
                         </div>
                     </div>
                     <div class="col-7 px-md-5 px-4 mt-3">
