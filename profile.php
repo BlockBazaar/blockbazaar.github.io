@@ -66,30 +66,55 @@ session_start();
 	<div class="row d-flex justify-content-center align-items-center">
 		<table class="" style="width: 70%;">
 			<tr>
-				<th colspan="3">Profile Details</th>
+				<th>Profile Details</th>
+				<th align="right"><a class="btn btn-primary me-md-2" style="background-color: rgb(0, 104, 0)" target="_self" href="editProfile.php" role="button">Edit</a></th>
 			</tr>
 			<tr>
-				<td>Name</td>
-				<td>Amit Sarkar</td>
+				<td>BlockBazaarID</td>
+				<td><?php echo $_SESSION['BlockBazaarID']; ?></td>
 			</tr>
 			<tr>
-				<td>Mobile No.</td>
-				<td>+91-98316XXX76</td>
+				<td>Full Name</td>
+				<td><?php echo $_SESSION['FullName']; ?></td>
+			</tr>
+			<tr>
+				<td>Contact Number</td>
+				<td><?php echo $_SESSION['ContactNumber']; ?></td>
 			</tr>
 			<tr>
 				<td>Email-id</td>
 				<td><?php echo $_SESSION['Email']; ?></td>
 			</tr>
 			<tr>
+				<td>Date of Birth</td>
+				<td><?php echo $_SESSION['DOB']; ?></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><?php echo $_SESSION['Password']; ?></td>
+			</tr>
+			<tr>
+				<td>Country</td>
+				<td><?php echo $_SESSION['Country']; ?></td>
+			</tr>
+			<tr>
+				<td>State</td>
+				<td><?php echo $_SESSION['State']; ?></td>
+			</tr>
+			<tr>
 				<td>Address</td>
-				<td></td>
-			</tr>			
+				<td><?php echo $_SESSION['Address']; ?></td>
+			</tr>
+			<tr>
+				<td>ZipCode</td>
+				<td><?php echo $_SESSION['ZipCode']; ?></td>
+			</tr>
 			<tr>
 				<td>Wallet Balance</td>
-				<td>627</td>
+				<td><?php echo $_SESSION['Wallet']; ?></td>
 			</tr>
 		</table>
-	</div>
+	</div>	
 	<div class="row d-flex justify-content-center align-items-center">
 		<table class="" style="width: 70%;">
 			<tr>
@@ -104,8 +129,8 @@ session_start();
 				<td>6</td>
 			</tr>
 			<tr>
-				<td>Tracking</td>
-				<td>Last Order: reached Kolkata-HUB today 10AM, <a href="">know more></a></td>
+				<td>TrackingID</td>
+				<td>TID123456 <a href="">know more></a></td>
 			</tr>
 			<tr>
 				<td>Help and FAQs</td>

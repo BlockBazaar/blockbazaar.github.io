@@ -102,16 +102,10 @@
         <ul class="nav flex-column text-white w-100 text">
       
             <a href="" target="" class="nav-link h3 text-white my-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
-                                  <i class="fa-solid fa-user" style="color:#fd531f;">  A B</i>
+                                  <i class="fa-solid fa-user" style="color:#fd531f;"></i>
             </a>
             <li href="#" class="">
               <a class="nav-link" href="profile.php">Home</a>
-            </li>
-            <li href="#" class="">
-              <a class="nav-link" href="profile.php">My Acoount</a>
-            </li>
-            <li href="#" class="">
-              <a class="nav-link" href="product.php">Products</a>
             </li>
             <li href="#" class="">
               <a class="nav-link" href="catalogue.php"> Catalogue </a>
@@ -122,8 +116,20 @@
             <li href="#" class="">
               <a class="nav-link" href="orders.php">Orders</a>
             </li>
-            <li href="#" class="help.php">
-              <a class="nav-link" href="">Help</a>
+			<li href="#" class="">
+              <a class="nav-link" href="ListProduct.php">List Product</a>
+            </li>
+			<li href="#" class="">
+              <a class="nav-link" href="product.php">Products</a>
+            </li>
+			<li href="#" class="">
+              <a class="nav-link" href="ownedAssets.php">Owned Assets</a>
+            </li>
+			<li href="#" class="">
+              <a class="nav-link" href="wallet.php">Wallet</a>
+            </li>
+			<li href="#" class="">
+              <a class="nav-link" href="crypto.php">Crypto Market</a>
             </li>
             <li href="#" class="">
               <a class="nav-link" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #fd531f;"></i> Sign Out</a>

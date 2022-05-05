@@ -1,7 +1,11 @@
+<?php
+require 'conn.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <header>
-	<title>Sign Up</title>
+	<title>Edit Profile</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -128,23 +132,25 @@
 </header>
 
 <body onload="bodyLoad()">
+	<?php include 'sidenav.php'; ?>
+
 	<span id="particles-js">
 	</span>
 	<script src="js/particles.js"></script>
 	<script src="js/app.js"></script>
-	<div class="align-content-center justify-content-center rounded-3 mainDiv" id="signUp">
+	<div class="align-content-center justify-content-center rounded-3 mainDiv" id="editProfile">
 		<div class="justify-content-center text-light" style="padding: 40px; height: 100%; background-color: rgb(54, 54, 54);">
-			<h2 class="d-flex align-items-center justify-content-center">Sign Up</h2>
+			<h2 class="d-flex align-items-center justify-content-center">Edit Profile</h2>
 			<div class="body">
 				<div class="container-fluid">
-					<div class="container" id="signUp">
-						<form action="signUpResponse.php" method="post" align="center" onsubmit="return formValidate();">
+					<div class="container" id="editProfile">
+						<form action="editProfileResponse.php" method="post" align="center" onsubmit="return formValidate();">
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
 								<div class="col-sm-auto">
-									<label class="form-label" for="bbid">
+									<label class="form-label" for="BBID">
 										<font style="color: red;">*</font>BlockBazaar ID
 									</label>
-									<input type="text" class="form-control text-center" id="bbid" name="bbid" required>
+									<input type="text" class="form-control text-center" id="bbid" name="bbid" value="<?php echo $_SESSION['BlockBazaarID']; ?>" required disabled>
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
@@ -152,13 +158,13 @@
 									<label class="form-label" for="fullName">
 										<font style="color: red;">*</font>Full Name
 									</label>
-									<input type="text" class="form-control text-center" id="fullName" name="fullName" required>
+									<input type="text" class="form-control text-center" id="fullName" name="fullName" value="<?php echo $_SESSION['FullName']; ?>" required>
 								</div>
 								<div class="col-sm-5">
 									<label class="form-label" for="email">
 										<font style="color: red;">*</font>Email
 									</label>
-									<input type="email" class="form-control text-center" id="email" name="email" required>
+									<input type="email" class="form-control text-center" id="email" name="email" value="<?php echo $_SESSION['Email']; ?>" required>
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
@@ -166,21 +172,21 @@
 									<label class="form-label" for="Contact">
 										<font style="color: red;">*</font>Contact Number
 									</label>
-									<input type="tel" pattern="[0-9]{10}" class="form-control text-center" id="contact" name="contact" required>
+									<input type="tel" pattern="[0-9]{10}" class="form-control text-center" id="contact" name="contact" value="<?php echo $_SESSION['ContactNumber']; ?>" required>
 								</div>
 								<div class="col-sm-5">
 									<label class="form-label" for="dob">
 										<font style="color: red;">*</font>Date of Birth
 									</label>
-									<input type="date" class="form-control text-center" id="dob" name="dob" required>
+									<input type="date" class="form-control text-center" id="dob" name="dob" value="<?php echo $_SESSION['DOB']; ?>" required>
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-center">
-								<div class="col-sm-5">
+								<div class="col-sm-auto">
 									<label class="form-label" for="pswrd">
 										<font style="color: red;">*</font>Password
 									</label>
-									<input type="password" class="form-control text-center" id="pswrd" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required> <br>
+									<input type="password" class="form-control text-center" id="pswrd" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" value="<?php echo $_SESSION['Password']; ?>" required> <br>
 									<input class="form-check-input" type="checkbox" value="" id="showPswrd" name="showPswd" onclick="showP()">
 									<label class="form-check-label" for="showPswrd">
 										Show Password
@@ -198,13 +204,13 @@
 									<label class="form-label" for="address">
 										<font style="color: red;">*</font>Address
 									</label>
-									<input type="text" class="form-control text-center" id="address" name="address" required>
+									<input type="text" class="form-control text-center" id="address" name="address" value="<?php echo $_SESSION['Address']; ?>" required>
 								</div>
 								<div class="col-sm-5">
 									<label class="form-label" for="zipCode">
 										<font style="color: red;">*</font>Zip Code
 									</label>
-									<input type="text" pattern="[0-9]+" class="form-control text-center" id="zipCode" name="zipCode" required>
+									<input type="text" pattern="[0-9]+" class="form-control text-center" id="zipCode" name="zipCode" value="<?php echo $_SESSION['ZipCode']; ?>" required>
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 mb-2 justify-content-around align-items-end">
@@ -212,13 +218,11 @@
 									<label class="form-label" for="country">
 										<font style="color: red;">*</font>Country
 									</label>
-									<input type="text" class="form-control text-center" id="country" name="country" required>
+									<input type="text" class="form-control text-center" id="country" name="country" value="<?php echo $_SESSION['Country']; ?>" required>
 								</div>
 								<div class="col-sm-5">
-									<label class="form-label" for="state">
-										<font style="color: red;">*</font>State
-									</label>
-									<input type="text" class="form-control text-center" id="state" name="state" required>
+									<label class="form-label" for="state">State</label>
+									<input type="text" class="form-control text-center" id="state" name="state" value="<?php echo $_SESSION['State']; ?>" required>
 								</div>
 							</div>
 							<div class="row gx-3 gy-2 mt-2 justify-content-around align-items-end">
@@ -244,13 +248,13 @@
 							</div>
 							<div class="row gx-3 gy-2 mt-4 mb-2 align-items-center justify-content-around">
 								<div class="col-sm-4">
-									<a class="btn btn-primary me-md-2" target="_self" href="index.php" role="button">Back</a>
+									<a class="btn btn-primary me-md-2" target="_self" href="profile.php" role="button">Back</a>
 								</div>
 								<div class="col-sm-2">
 									<button type="reset" class="btn btn-primary me-md-2" value="reset" style="background-color: rgb(255, 20, 20)" onclick="captcha()">Reset</button>
 								</div>
 								<div class="col-sm-4">
-									<button type="submit" class="btn btn-primary me-md-2" style="background-color: rgb(0, 104, 0)" value="submit">Sign Up</button>
+									<button type="submit" class="btn btn-primary me-md-2" style="background-color: rgb(0, 104, 0)" value="submit">Apply</button>
 								</div>
 							</div>
 						</form>

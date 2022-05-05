@@ -18,7 +18,7 @@
 	<nav class="navbar sticky-top navbar-expand-lg navbar-light">
 		<div class="container-fluid">
 			<a class="navbar_brand" href="#">
-				<img class="logo" src="img/bb-logo.png" alt="" style="" />
+				<img class="logo" src="img/bb-logo.png" alt=""/>
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -31,25 +31,6 @@
 					<li class="nav-item"><a class="nav-link" href="#"> Purchase Guide </a></li>
 					<li class="nav-item"><a class="nav-link" data-bs-toggle="modal" href="#loginModal" id="login"> Log
 							In </a></li>
-					<!-- <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">    <i class="fa-solid fa-user"></i></a> -->
-					<div class="d-none btn-group dropstart" id="profile">
-						<button type="button" class="btn-user btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-							aria-expanded="false">
-							<i class="fa-solid fa-user"></i>
-						</button>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#"> Profile </a></li>
-							<li><a class="dropdown-item" href="#"> Owned Assets </a></li>
-							<li><a class="dropdown-item" href="#"> Wallet </a></li>
-							<li><a class="dropdown-item" href="#"> Orders </a></li>
-							<li><a class="dropdown-item" href="#"> Transactions </a></li>
-							<li>
-								<hr class="dropdown-divider">
-							</li>
-							<li><a class="dropdown-item" href="#"> Sign-Out </a></li>
-						</ul>
-					</div>
-					</li>
 				</ul>
 			</div>
 			<!-- navbar-collapse.// -->
@@ -70,8 +51,8 @@
 						<div class="container" id="login">
 							<form action="authentication.php" method="post" name="loginform">
 								<div class="form-outline mb-3 mt-3">
-									<label class="form-label" for="email">Email</label>
-									<input type="text" class="form-control" id="email" name="email">
+									<label class="form-label" for="bbid">BlockBazaar ID</label>
+									<input type="text" class="form-control" id="bbid" name="bbid">
 								</div>
 								<div class="form-outline mt-3 mb-3">
 									<label class="form-label" for="pwd">Password</label>
@@ -101,7 +82,7 @@
 					<div class="row">
 						<div class="col">
 							<h1 class="mb-3" style="padding-bottom: 30px;">A Free Online Marketplace<br> No Platform Fees<br> No Middlemen</h1>
-							<a class="btn btn1 btn-outline-light m-2" style="" href="" role="button" rel="nofollow"
+							<a class="btn btn1 btn-outline-light m-2" href="" role="button" rel="nofollow"
 								target="_blank">Get a call</a>
 							<a class="btn btn-outline-light btn-lg m-2" href="signup.php" target="_blank"
 								role="button">Get Started</a>

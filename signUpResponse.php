@@ -41,16 +41,6 @@
 			height: 100%;
 		}
 
-		#mainCaptcha {
-			background-color: #e5e5f7;
-			opacity: 9.0;
-			background-size: 4px 4px;
-			background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.4px, #e5e5f7 0, #e5e5f7 50%);
-			color: rgb(58, 3, 187);
-			font-style: oblique;
-			font-family: cursive;
-			font-size: larger;
-		}
 		.form-control, .btn{
 			border-radius: 20vh;
 		}
@@ -65,68 +55,6 @@
 			opacity: 0.7;
 		}
 	</style>
-	<script>
-
-		function bodyLoad() {
-			captcha();
-			dateRange();
-		}
-		function captcha() {
-			var randomString = "";
-			var characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz!@#$%&()+=-<>/?[]{}";
-
-			for (var i = 0; i < 6; i++) {
-				randomString += " " + characters.charAt(Math.floor(Math.random() * characters.length));
-			}
-			document.getElementById('mainCaptcha').value = randomString;
-			document.getElementById('userCaptcha').value = "";
-		}
-
-		function dateRange() {
-			var dt = new Date();
-			var dd = dt.getDate();
-			var mm = dt.getMonth() + 1; //January is 0!
-			var yyyy = dt.getFullYear() - 13;
-
-			if (dd < 10) {
-			dd = '0' + dd;
-			}
-
-			if (mm < 10) {
-			mm = '0' + mm;
-			} 
-				
-			dt = yyyy + '-' + mm + '-' + dd;
-			document.getElementById("dob").setAttribute("max", dt);
-		}
-
-		function showP() {
-			var x = document.getElementById('pswrd');
-			if (x.type === "password") {
-				x.type = "text";
-			} else {
-				x.type = "password";
-			}
-		}
-
-		function formValidate() {
-			var mainCaptcha = document.getElementById('mainCaptcha').value;
-			var userCaptcha = document.getElementById('userCaptcha').value;
-			if (mainCaptcha != userCaptcha) {
-				alert("Invalid captcha");
-				return false;
-			} else {
-				var msg = "Are you sure you want to submit this form and all provided details are correct?";
-				if (confirm(msg) === true) {
-					return true;
-				}
-				else {
-					return false;
-				}
-			}
-		}
-
-	</script>
 </header>
 
 <body onload="bodyLoad()">
@@ -137,10 +65,41 @@
 	<div class="align-content-center justify-content-center rounded-3 mainDiv" id="signUp">
 		<div class="justify-content-center text-light" style="padding: 20px; background-color: rgb(54, 54, 54);">
 			<h2 class="d-flex align-items-center justify-content-center">Sign Up</h2>
-			<div class="body">
-				<h4 style="padding: 12vh 0 0 0;">Thank You. Your Account has been succesfully created.</h4>
-				<h6 class="d-flex justify-content-center align-items-center" style="padding: 10vh 0 3vh 0;"><a class="btn" style="color:rgb(179, 179, 179); background-color: rgba(0, 0, 0, 0.377)" href="index.php"> Get Started Now</a></h6>
-				<h6 class="d-flex justify-content-center align-items-center" style="padding: 10vh 0 3vh 0; font-size: smaller">Best Wishes from BlockBazaar</h6>
+			<div class="body" style="padding: 20px;">
+			<?php
+				require 'conn.php';
+
+				if (!$con) {
+					die('Could not connect: ' . mysqli_error());
+				}
+				$bbid = $_REQUEST["bbid"];
+				$query1 = "SELECT * from usercredentials WHERE BlockBazaarID='$bbid'";
+
+				$retval1 = mysqli_query($con, $query1);
+				if (mysqli_num_rows($retval1) > 0) {
+					echo "User Already Exists, Please Signin";
+					echo "<h6 class='d-flex justify-content-center align-items-center' style='padding: 10vh 0 3vh 0;'><a class='btn' style='color:rgb(179, 179, 179); background-color: rgba(0, 0, 0, 0.377)' href='index.php'> Get Started Now</a></h6>";
+				} else {
+					$name = $_REQUEST["fullName"];
+					$email = $_REQUEST["email"];
+					$con_num = $_REQUEST["contact"];
+					$date = $_REQUEST["dob"];
+					$password = $_REQUEST["pswd"];
+					$country = $_REQUEST["country"];
+					$state = $_REQUEST["state"];
+					$address = $_REQUEST["address"];
+					$zipcode = $_REQUEST["zipCode"];
+					$query2 = "INSERT INTO usercredentials (BlockBazaarID, FullName, Email, ContactNumber, DOB, Password, Country, State, Address, ZipCode) VALUES ('$bbid', '$name', '$email', '$con_num', '$date', '$password', '$country', '$state', '$address', '$zipcode')";
+					$retval2 = mysqli_query($con, $query2);
+					if (!$retval2) {
+						die('Could not enter data: ' . mysqli_error());
+					}
+					echo "<h4 style=''padding: 12vh 0 0 0;'>Thank You. Your Account has been succesfully created.</h4>";
+					echo "<h6 class='d-flex justify-content-center align-items-center' style='padding: 10vh 0 3vh 0;'><a class='btn' style='color:rgb(179, 179, 179); background-color: rgba(0, 0, 0, 0.377)' href='index.php'> Get Started Now</a></h6>";
+					echo "<h6 class='d-flex justify-content-center align-items-center' style='padding: 10vh 0 3vh 0; font-size: smaller'>Best Wishes from BlockBazaar</h6>";
+				}
+				mysqli_close($con);
+				?>				
 			</div>
 		</div>
 	</div>

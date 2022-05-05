@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <header>
@@ -101,7 +104,7 @@
 
 		i {
 			font-size: 4px;
-		}		
+		}
 
 		i {
 			font-size: larger;
@@ -251,10 +254,9 @@
 		<div class="container-xl">
 			<div class="row">
 				<div class="col-sm-6 text-center">
-					<h1> Product 1</h1>
-					<h2>brand-name</h2>
-					<p>intro</p>
-					<img src="img/p1.png" class="col text-center" alt="..." style="">
+					<h1> adidas Red Tshirt</h1>
+					<h2>adidas</h2>
+					<img src="img/p1.jpg" class="col text-center" alt="..." style="">
 				</div>
 				<div class="col-sm-6 text-center" style="padding: 20px 20px 20px 20px;">
 					<div class="accordion" id="accordionPanelsStayOpenExample">
@@ -266,34 +268,22 @@
 							</h2>
 							<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
 								<div class="accordion-body text-start">
-									<strong>Name:</strong><br>
-									<strong>Brand:</strong><br>
-									<strong>Origin:</strong><br>
-									<strong>Type:</strong>
+									<strong>Name: adidas Red Tshirt</strong><br>
+									<strong>Brand: adidas</strong><br>
+									<strong>Origin: India</strong><br>
+									<strong>Size: L</strong>
 								</div>
 							</div>
 						</div>
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
 								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-									SPECIFICATIONS AND FEATURES
+									DESCRIPTION
 								</button>
 							</h2>
 							<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
 								<div class="accordion-body">
-									<strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-								</div>
-							</div>
-						</div>
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="panelsStayOpen-headingThree">
-								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-									TERMS AND CONDITIONS
-								</button>
-							</h2>
-							<div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-								<div class="accordion-body">
-									<strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+									Size: L, Colour:Red, Fabric: cotton, Fit: Regular
 								</div>
 							</div>
 						</div>
@@ -323,9 +313,6 @@
 					</div>
 					<div class="row">
 						<div class="col" style="padding-top: 50px;">
-							<a href=""><i class="fa-brands fa-gratipay"></i> Wishlist </a>
-						</div>
-						<div class="col" style="padding-top: 50px;">
 							<button type="button" class="btn btn-success" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Buy Now</button>
 						</div>
 						<div class="col text-start" style="padding-top: 50px; ">
@@ -339,102 +326,93 @@
 							<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 						</div>
 						<div class="offcanvas-body">
-							<div class="row">
-								<div class="column">
-									<table>
-										<tr>
-											<th colspan="3">Contract Metadata</th>
-										</tr>
-										<tr>
-											<td>Contract Version</td>
-											<td>1.0</td>
-										</tr>
-										<tr>
-											<td>Contract Category</td>
-											<td>Type II</td>
-										</tr>
-										<tr>
-											<td>Expiration Date</td>
-											<td>19.06.22</td>
-										</tr>
-									</table>
+							<form action="product.php" method="POST">
+								<div class="row">
+									<div class="column">
+										<table>
+											<tr>
+												<th colspan="3">Contract Metadata</th>
+											</tr>
+											<tr>
+												<td>Contract Version</td>
+												<td><input type="text" name="convr" value="1.0"></td>
+											</tr>
+											<tr>
+												<td>Contract Category</td>
+												<td><input type="text" name="concat" value="Physical Good"></td>
+											</tr>
+											<tr>
+												<td>Expiration Date</td>
+												<td><input type="text" name="Exp" value="Lifetime Validity"></td>
+											</tr>
+										</table>
+									</div>
+									<div class="column">
+										<table>
+											<tr>
+												<th colspan="3">Merchant ID</th>
+											</tr>
+											<tr>
+												<td>Global Unique Identifier</td>
+												<td><input type="text" name="MID" value="amit123"></td>
+											</tr>
+
+										</table>
+									</div>
 								</div>
-								<div class="column">
-									<table>
-										<tr>
-											<th colspan="3">Merchant ID</th>
-										</tr>
-										<tr>
-											<td>Global Unique Identifier</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>Uncompressed EC public key</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>PGP key</td>
-											<td>--</td>
-										</tr>
-									</table>
+								<div class="row">
+									<div class="column">
+										<table>
+											<tr>
+												<th colspan="3">Item Data Fields</th>
+											</tr>
+											<tr>
+												<td>Item Title</td>
+												<td><input type="text" name="title" value="Adidas Red Tshirt"></td>
+											</tr>
+											<tr>
+												<td>Price</td>
+												<td><input type="text" name="price" value="$10"></td>
+											</tr>
+											<tr>
+												<td>Quantity</td>
+												<td><input type="text" name="quantity" value="1"></td>
+											</tr>
+											<tr>
+												<td>Region</td>
+												<td><input type="text" name="region" value="India"></td>
+											</tr>
+											<tr>
+												<td>Shipping Cost</td>
+												<td><input type="text" name="Scost" value="$2"></td>
+											</tr>
+											<tr>
+												<td>Estimated Delivery Details</td>
+												<td><input type="text" name="Est" value="10 days"></td>
+											</tr>
+										</table>
+									</div>
+									<div class="column">
+										<table>
+											<tr>
+												<th colspan="3">Other INFO</th>
+											</tr>
+											<tr>
+												<td>Buyer ID</td>
+												<td><input type="text" name="BID" value="<?php echo $_SESSION['BlockBazaarID']; ?>"></td>
+											</tr>
+										</table>
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="column">
-									<table>
-										<tr>
-											<th colspan="3">Item Data Fields</th>
-										</tr>
-										<tr>
-											<td>Item Title</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>Price</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>Quantity</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>Region</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>Shipping Cost</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>Estimated Delivery Details</td>
-											<td>--</td>
-										</tr>
-									</table>
-								</div>
-								<div class="column">
-									<table>
-										<tr>
-											<th colspan="3">Other INFO</th>
-										</tr>
-										<tr>
-											<td>Buyer ID</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>Notary ID</td>
-											<td>--</td>
-										</tr>
-										<tr>
-											<td>Escrow Multisignature</td>
-											<td>--</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-							<form action="/action_page.php">
-								<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-								<label for="vehicle1">I declare that have read the above details of the contract and agree to continue with the terms and conditions</label><br>
 								<input type="submit" value="Submit" style="background-color: #fd531f; color: white; margin-top: 10px;">
+								<script src="main.js">
+									var jsonData = require('./'+document.getElementsByName('title')+'RContract.json');
+									let aadcoin = new Blockchain();
+									aadcoin.addBlock(new Block(1, "01/05/2022", jsonData));									
+									}));
+									//console.log("Is our blockchain valid?"  + aadcoin.isChainValid());
+									console.log(JSON.stringify(aadcoin, null, 4));
+								</script>
 							</form>
 						</div>
 					</div>
@@ -443,3 +421,59 @@
 		</div>
 	</section>
 </body>
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+	function get_data()
+	{
+		$file_name = $_POST['title'] . 'RContract' . '.json';
+
+		if (file_exists("$file_name")) {
+			$current_data = file_get_contents("$file_name");
+			$array_data = json_decode($current_data, true);
+
+			$extra = array(
+				'ContractVersion' => $_POST['convr'],
+				'ContractCategory' => $_POST['concat'],
+				'ExpirationDate' => $_POST['Exp'],
+				'MID' => $_POST['MID'],
+				'BID' => $_POST['BID'],
+				'ItemTitle' => $_POST['title'],
+				'Price' => $_POST['price'],
+				'Quantity' => $_POST['quantity'],
+				'Region' => $_POST['region'],
+				'ShippingCost' => $_POST['Scost'],
+				'EstimatedDelivery' => $_POST['Est'],
+			);
+			$array_data[] = $extra;
+			echo "file exist<br/>";
+			return json_encode($array_data);
+		} else {
+			$datae = array();
+			$datae[] = array(
+				'ContractVersion' => $_POST['convr'],
+				'ContractCategory' => $_POST['concat'],
+				'ExpirationDate' => $_POST['Exp'],
+				'MID' => $_POST['MID'],
+				'BID' => $_POST['BID'],
+				'ItemTitle' => $_POST['title'],
+				'Price' => $_POST['price'],
+				'Quantity' => $_POST['quantity'],
+				'Region' => $_POST['region'],
+				'ShippingCost' => $_POST['Scost'],
+				'EstimatedDelivery' => $_POST['Est'],
+			);
+			return json_encode($datae);
+		}
+	}
+
+	$file_name = $_POST['title'] . ' RContract' . '.json';
+
+	if (file_put_contents("$file_name", get_data())) {
+	} else {
+		echo 'There is some error';
+	}
+}
+
+?>

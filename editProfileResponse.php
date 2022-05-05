@@ -1,3 +1,7 @@
+<?php
+require 'conn.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <header>
@@ -41,17 +45,6 @@
 			height: 100%;
 		}
 
-		#mainCaptcha {
-			background-color: #e5e5f7;
-			opacity: 9.0;
-			background-size: 4px 4px;
-			background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.4px, #e5e5f7 0, #e5e5f7 50%);
-			color: rgb(58, 3, 187);
-			font-style: oblique;
-			font-family: cursive;
-			font-size: larger;
-		}
-
 		.form-control,
 		.btn {
 			border-radius: 20vh;
@@ -68,32 +61,44 @@
 			background-color: bisque;
 			opacity: 0.7;
 		}
-
-		.btn {
-			padding: 2vh;
-			font-size: 3vh;
-		}
 	</style>
-	<script>
-
-
-	</script>
 </header>
 
-<body onload="bodyLoad()">
+<body>
 	<span id="particles-js">
 	</span>
 	<script src="js/particles.js"></script>
 	<script src="js/app.js"></script>
 	<div class="align-content-center justify-content-center rounded-3 mainDiv" id="signUp">
 		<div class="justify-content-center text-light" style="padding: 20px; background-color: rgb(54, 54, 54);">
-			<h2 class="d-flex align-items-center justify-content-center">Wallet</h2>
+			<h2 class="d-flex align-items-center justify-content-center">Profile Update</h2>
 			<div class="body">
-				<div></div>
-				<h4 class="d-flex justify-content-center align-items-center" style="padding: 10vh 0 0 0; color: rgb(236, 193, 0)">Wallet Balance: 425</h4>
-				<h5 style="padding: 12vh 0 0 0;"> Current offer: Get cashback upto 10%. </h5>
-				<h6 class="d-flex justify-content-center align-items-center" style="padding: 10vh 0 3vh 0;"><a class="btn" style="color:rgb(179, 179, 179); background-color: rgba(0, 0, 0, 0.377)" href="payment.php"> Add </a></h6>
-				<h6 class="d-flex justify-content-center align-items-center" style="padding: 10vh 0 3vh 0; font-size: smaller"> Any issue? <a href="" style="padding-left: 4px"> Reach Us </a></h6>
+				<?php
+				require 'conn.php';
+
+
+				if (!$con) {
+					die('Could not connect: ' . mysqli_error());
+				}
+				$bbid = $_SESSION['BlockBazaarID'];
+				$name = $_REQUEST["fullName"];
+				$email = $_REQUEST["email"];
+				$con_num = $_REQUEST["contact"];
+				$date = $_REQUEST["dob"];
+				$password = $_REQUEST["pswd"];
+				$country = $_REQUEST["country"];
+				$state = $_REQUEST["state"];
+				$address = $_REQUEST["address"];
+				$zipcode = $_REQUEST["zipCode"];
+				$query2 = "UPDATE usercredentials SET FullName ='$name', Email = '$email', ContactNumber = '$con_num', DOB = '$date', Password = '$password', Country = '$country', State = '$state', Address = '$address', ZipCode = '$zipcode' WHERE BlockBazaarID = '$bbid'";
+				$retval2 = mysqli_query($con, $query2);
+
+				echo "<h4 style=''padding: 12vh 0 0 0;'>Thank You. Your Account has been succesfully created.</h4>";
+				echo "<h6 class='d-flex justify-content-center align-items-center' style='padding: 10vh 0 3vh 0;'><a class='btn' style='color:rgb(179, 179, 179); background-color: rgba(0, 0, 0, 0.377)' href='profile.php'> Get Started Now</a></h6>";
+				echo "<h6 class='d-flex justify-content-center align-items-center' style='padding: 10vh 0 3vh 0; font-size: smaller'>Best Wishes from BlockBazaar</h6>";
+
+				mysqli_close($con);
+				?>
 			</div>
 		</div>
 	</div>
